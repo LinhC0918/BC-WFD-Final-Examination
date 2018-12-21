@@ -1,0 +1,54 @@
+<div class="col-md-8" style="text-align: center">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Tag</th>
+            <th scope="col">URL</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let awesome of awesomeList; index as id">
+            <td>{{awesome.tag}}</td>
+            <td>{{awesome.url}}</td>
+            <td>{{awesome.descriptions}}</td>
+            <td>
+                <button [routerLink]="['/awesome', awesome.id, 'edit']" class="btn btn-primary ">Edit</button>
+            </td>
+            <td>
+                <button (click)="deleteAwesome(id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!--<button [routerLink]="['/awesome/create']" >Create</button>-->
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+    <div class="col-md-8">
+        <div>
+            <label>Tag</label>
+            <input type="text" class="form-control" formControlName="tag">
+        </div>
+        <div *ngIf="createForm.get('tag').invalid && createForm.get('tag').touched" style="color: red">
+            Tag is required!
+        </div>
+        <div>
+            <label>URL</label>
+            <input type="text" class="form-control" formControlName="url">
+        </div>
+        <div *ngIf="createForm.get('url').invalid && createForm.get('url').touched" style="color: red">
+            URL is required!
+        </div>
+        <div>
+            <label>Description</label>
+            <textarea formControlName="descriptions" class="form-control"></textarea>
+        </div>
+        <div *ngIf="createForm.get('descriptions').invalid && createForm.get('descriptions').touched"
+             style="color: red">
+            Description is required and at least 10 characters!
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+</form>
+
