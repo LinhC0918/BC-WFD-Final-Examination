@@ -8,7 +8,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateAwesomeComponent } from './create-awesome/create-awesome.component';
 import { EditAwesomeComponent } from './edit-awesome/edit-awesome.component';
-import { DetailAwesomeComponent } from './detail-awesome/detail-awesome.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +15,6 @@ import { DetailAwesomeComponent } from './detail-awesome/detail-awesome.componen
         AwesomeComponent,
         CreateAwesomeComponent,
         EditAwesomeComponent,
-        DetailAwesomeComponent
     ],
     imports: [
         BrowserModule,

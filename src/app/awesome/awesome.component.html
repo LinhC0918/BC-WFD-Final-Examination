@@ -1,4 +1,4 @@
-<div class="col-md-8" style="text-align: center">
+<div class="col-md-8" style="text-align: center; margin: auto">
     <table class="table table-striped">
         <thead class="thead-dark">
         <tr>
@@ -22,33 +22,33 @@
         </tr>
         </tbody>
     </table>
+    <button [routerLink]="['/awesome/create']" class="btn btn-success">Create</button>
 </div>
-<!--<button [routerLink]="['/awesome/create']" >Create</button>-->
-<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
-    <div class="col-md-8">
-        <div>
-            <label>Tag</label>
-            <input type="text" class="form-control" formControlName="tag">
-        </div>
-        <div *ngIf="createForm.get('tag').invalid && createForm.get('tag').touched" style="color: red">
-            Tag is required!
-        </div>
-        <div>
-            <label>URL</label>
-            <input type="text" class="form-control" formControlName="url">
-        </div>
-        <div *ngIf="createForm.get('url').invalid && createForm.get('url').touched" style="color: red">
-            URL is required!
-        </div>
-        <div>
-            <label>Description</label>
-            <textarea formControlName="descriptions" class="form-control"></textarea>
-        </div>
-        <div *ngIf="createForm.get('descriptions').invalid && createForm.get('descriptions').touched"
-             style="color: red">
-            Description is required and at least 10 characters!
-        </div>
-        <button type="submit" class="btn btn-success">Submit</button>
-    </div>
-</form>
+<!--<form [formGroup]="createForm" (ngSubmit)="onSubmit()">-->
+    <!--<div class="col-md-8">-->
+        <!--<div>-->
+            <!--<label>Tag</label>-->
+            <!--<input type="text" class="form-control" formControlName="tag">-->
+        <!--</div>-->
+        <!--<div *ngIf="createForm.get('tag').invalid && createForm.get('tag').touched" style="color: red">-->
+            <!--Tag is required!-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<label>URL</label>-->
+            <!--<input type="text" class="form-control" formControlName="url">-->
+        <!--</div>-->
+        <!--<div *ngIf="createForm.get('url').invalid && createForm.get('url').touched" style="color: red">-->
+            <!--URL is required!-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<label>Description</label>-->
+            <!--<textarea formControlName="descriptions" class="form-control"></textarea>-->
+        <!--</div>-->
+        <!--<div *ngIf="createForm.get('descriptions').invalid && createForm.get('descriptions').touched"-->
+             <!--style="color: red">-->
+            <!--Description is required and at least 10 characters!-->
+        <!--</div>-->
+        <!--<button type="submit" class="btn btn-success">Submit</button>-->
+    <!--</div>-->
+<!--</form>-->
 

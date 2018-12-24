@@ -3,7 +3,6 @@ import {AwesomeService} from '../awesome.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {IAwesome} from '../iawesome';
-import {AwesomeComponent} from '../awesome/awesome.component';
 
 
 @Component({
@@ -25,7 +24,7 @@ export class CreateAwesomeComponent implements OnInit {
         this.createForm = this.formBuilder.group({
             tag: '',
             url: '',
-            description: ''
+            descriptions: ''
         });
     }
 
@@ -33,15 +32,14 @@ export class CreateAwesomeComponent implements OnInit {
         const {value} = this.createForm;
         this.awesomeService.createAwesome(value).subscribe(
             data => {
+                this.router.navigate(['/awesome']);
                 this.awesomeList.unshift(data);
                 this.createForm.reset({
                     tag: '',
                     url: '',
                     descriptions: ''
                 });
-                this.router.navigate(['/awesome']);
             }
         );
     }
-
 }

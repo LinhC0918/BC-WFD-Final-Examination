@@ -28,5 +28,9 @@ export class AwesomeService {
         return this.http.post<IAwesome>(this.API_URL, awesome);
     }
 
+    editAwesome(awesome: IAwesome): Observable<IAwesome> {
+        return this.http.patch<IAwesome>(`${this.API_URL}/${awesome.id}`, awesome);
+    }
+
 
 }

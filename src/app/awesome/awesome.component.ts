@@ -45,22 +45,22 @@ export class AwesomeComponent implements OnInit {
         );
     }
 
-    onSubmit() {
-        if (this.createForm.valid) {
-            const {value} = this.createForm;
-            this.awesomeService.createAwesome(value).subscribe(
-                data => {
-                    this.awesomeList.unshift(data);
-                    this.createForm.reset({
-                        tag: '',
-                        url: '',
-                        descriptions: ''
-                    });
-                }
-            );
-        }
-
-    }
+    // onSubmit() {
+    //     if (this.createForm.valid) {
+    //         const {value} = this.createForm;
+    //         this.awesomeService.createAwesome(value).subscribe(
+    //             data => {
+    //                 this.awesomeList.unshift(data);
+    //                 this.createForm.reset({
+    //                     tag: '',
+    //                     url: '',
+    //                     descriptions: ''
+    //                 });
+    //             }
+    //         );
+    //     }
+    //
+    // }
 
     // createAwesome() {
     //     this.router.navigate(['/awesome/create']);
